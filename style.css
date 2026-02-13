@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Pacifico&display=swap');
+
+:root {
+  --pink-bg: #ffe5f0;
+  --pink-light: #ffd6e8;
+  --pink-mid: #ff8fb1;
+  --pink-bold: #ff3d83;
+  --text: #4d2b3a;
+  --card: #ffffffdd;
+  --shadow: 0 18px 40px rgba(255, 61, 131, 0.25);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Fredoka', 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #fff0f7, #ffe5f0 45%, #ffd6e8 80%);
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+.bg-hearts {
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 141, 177, 0.4) 0 8px, transparent 9px),
+    radial-gradient(circle at 80% 10%, rgba(255, 61, 131, 0.35) 0 10px, transparent 11px),
+    radial-gradient(circle at 30% 70%, rgba(255, 61, 131, 0.3) 0 12px, transparent 13px),
+    radial-gradient(circle at 60% 40%, rgba(255, 141, 177, 0.3) 0 9px, transparent 10px);
+  filter: blur(1px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px 60px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 8px 0;
+  color: var(--pink-bold);
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--pink-light);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--pink-bold);
+}
+
+.lede {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.chip {
+  background: #fff;
+  border: 1px solid var(--pink-light);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+
+.game-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(4px);
+  margin-bottom: 40px;
+}
+
+.status {
+  background: var(--pink-light);
+  color: var(--pink-bold);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 3px solid var(--pink-light);
+  background: #ffeef7;
+}
+
+.win-overlay,
+.celebrate {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 229, 240, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  padding: 20px;
+}
+
+.fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.dialog, .celebrate-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 26px 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 420px;
+}
+
+.dialog h2, .celebrate-card h2 {
+  margin: 0 0 10px;
+  color: var(--pink-bold);
+}
+
+.dialog-text {
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+
+.dialog-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-family: 'Fredoka', 'Inter', system-ui, sans-serif;
+}
+
+.btn.yes {
+  background: linear-gradient(120deg, #ff8fb1, #ff3d83);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn.no {
+  background: #fff0f7;
+  color: var(--pink-bold);
+  border: 1px solid var(--pink-light);
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.celebrate-card p { margin: 0; }
+
+.tiny { font-size: 12px; color: #8c5f72; }
+
+@media (max-width: 760px) {
+  .game-card { padding: 14px; }
+  canvas { height: 70vw; }
+}

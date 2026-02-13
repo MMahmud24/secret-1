@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-hearts" aria-hidden="true"></div>
+
+    <main class="wrapper">
+        <header class="hero">
+            <p class="eyebrow">Save Your Boyfriend for Valentine's Day</p>
+            <h1>Get me outta this maze!!!</h1>
+            <p class="lede">Guide your character to come save meeeeeeeee, or else diddy is gonna get me 😔</p>
+            <div class="chips">
+                <span class="chip">Use WASD / arrow keys to move</span>
+                <span class="chip">Help me escape i want fooood</span>
+                <span class="chip">We can get a Venchi's hot chocolate after hehe</span>
+            </div>
+        </header>
+
+        <section class="game-card">
+            <div class="status" id="status">Go to the cage to rescue me!</div>
+            <canvas id="maze" width="700" height="700" role="img" aria-label="Cute pink maze game"></canvas>
+        </section>
+    </main>
+
+    <div class="win-overlay" id="overlay" hidden>
+        <div class="dialog">
+            <h2>You did it!! OHH YEAHHHHH</h2>
+            <p class="dialog-text">You sacrificed your life to come get me YAY. But I need to tell you something... I set this whole thing up BECAUSEEEE I need to ask you something. uhhhhh WILL YOU BE MY VALENTINE? 🥺🥺🥺🥺🥺</p>
+            <div class="dialog-buttons">
+                <button id="yesBtn" class="btn yes">Yurrrr</button>
+                <button id="noBtn" class="btn no">Naurr</button>
+            </div>
+            <p class="tiny">(Warning: if you press "Naur", i die in real life)</p>
+        </div>
+    </div>
+
+    <div class="celebrate" id="celebrate" hidden>
+        <div class="celebrate-card">
+            <h2>OMG YOU MUST LIKE ME</h2>
+            <p>I think we should go on a date. How about WokWok for our 2 year anniversary??</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
